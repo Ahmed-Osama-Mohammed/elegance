@@ -1,0 +1,74 @@
+ <div class="add-bg">
+
+    <div class="content col-lg-8 offset1 col-10 ">
+        <div class="container">
+            <button type="button" class="btn-close" aria-label="Close" (click)="closed()"></button>
+            <div class="row">
+                <div class="col-lg-7 col-12 ">
+                    <img src="{{selectedProduct.img}}" class="imgA">
+                </div>
+                <div class="col-lg-5 col-12 info">
+                    <h1 class="titleA">{{selectedProduct.name}}</h1>
+                    <h2 class="priceA">{{selectedProduct.price|currency:'$':true:'1.2-4'}}</h2>
+                    <p class="serialnumA">SKU:00{{+selectedProduct.id}}</p>
+
+                    <label for="quantity">Quantity:
+                        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1"
+                            [(ngModel)]="quantity">
+                    </label>
+                    <label for="size" class="sizeA">Size:
+                        <select name="size" [(ngModel)]="size" (click)="getSizes()" > 
+                            <option *ngFor="let size of selectedProduct.sizes" value="{{size}}" class="fill">{{size}}</option>
+                           
+                          </select>
+                    </label>
+
+                    <button type="button" class="add" ng-model="quantity"
+                       (click)="AddToCart() ; openCart() ;setTotal()" [disabled]="!size">Add
+                        to cart</button>
+                    <button class="view" (click)="closed() ; openView()">view quick details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="cart-sidebar">
+    <div class="contents">
+        <button type="button" class="extend" (click)="extend()"><img src="../../assets/images/icon-expand.png"></button>
+        <h1 class="title">Cart</h1>
+    </div>
+    <div  *ngIf="cart.length==0">
+        <h1 class="empty">The cart is empty</h1>
+    </div>
+    <div class="products-container">
+        <div  *ngFor="let product of cart; let i =index" class="product" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-12">
+                            <img src="{{product.img}}" class="buy">
+                        </div>
+                        <div class="col-lg-6 col-10">
+                            <h1 class="title-cart">{{product.name}} </h1>
+                            <h2 class="price-cart">{{product.price*product.quantity|currency:'$':true:'1.2-4' }}</h2>
+                            <p class="size-cart"> {{product.size}}</p>
+                            <p class="quantity-cart"> {{product.quantity}}</p>
+                        </div>
+                        <div class="col-1"> <button type="button" class="btn-close item-remove" aria-label="Close"
+                                (click)="removeProduct(i)"></button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="sub-total" *ngIf="selectedProducts.length!=0">
+        Subtotal:
+        <h2>
+            {{total|currency:'$':true:'1.2-4' }}
+        </h2>
+        <a  class="show-cart" [routerLink]="['check-out']" (click)="extend();sendCart() ">Check Out</a>
+    </div>
+</div>

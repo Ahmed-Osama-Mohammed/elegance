@@ -1,0 +1,47 @@
+footer {
+    background: #e0d3c3;
+}
+ul {
+    list-style: none;
+    margin-top: 85px;
+    font-size: 21px;
+    font-weight: 600;
+}
+a {
+    text-decoration: none;
+    color: unset;
+    font-weight: 300;
+    font-size: 17px;
+}
+li {
+    margin-top: 12px;
+}
+img{
+    width: 50%;
+    display: block;
+    margin: 100px auto 0;
+}
+h1.title {
+    text-align: center;
+    font-size: 28px;
+}
+.social{
+    text-align: center;
+}
+.social li:hover{
+    transform:scale(1.2)
+}
+.social li a{
+    font-size: 37px !important;
+}
+.social li {
+    transition: linear all .2s;
+    display: inline-block;
+    margin: 0 20px;
+    color: #3e3d3b;
+}
+p {
+    text-align: center;
+    font-size: 21px;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,126 @@
+
+<div class="bg">
+    <div class="all-welcome col-welcome" (click)="extend();close()">
+        <h1 class="welcome-title">EVERYTHING THAT WE SELLING IN OUR STORE  </h1>
+        <p>I'm a paragraph. here you add your own text and edit me. It’s easy. Just replace this text in p with your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+        <button (click)="onClick('collections')" class="scroll shake-little"></button>
+    </div>
+
+    <section id="filters" data-auto-filter="true">
+        <button type="button" (click)="close()" class="btn-close" aria-label="Close" ></button>
+        <h5>Filters</h5>
+
+        <!-- Section: Condition -->
+        <section class="mb-4" data-filter="condition">
+          <h6 class="font-weight-bold mb-3">Basic</h6>
+
+          <div class="form-check mb-3">
+            <label class="form-check-label text-uppercase small  " for="condition-checkbox">
+             catagory:
+            </label>
+            <select name="catagory" [(ngModel)]="catagory">
+              <option *ngFor="let type of catagories" value="{{type}}" class="fill">{{type}}</option>
+            </select>
+          </div>
+
+          <div class="form-check mb-3">
+            <label class="form-check-label text-uppercase small  " for="condition-checkbox">
+              Product Type:
+            </label>
+            <select name="productType" [(ngModel)]="productType">
+              <option *ngFor="let productType of productTypes" value="{{productType}}" class="fill">{{productType}}</option>
+            </select>
+          </div>
+
+
+          <div class="form-check mb-3">
+            <label class="form-check-label text-uppercase small  " for="condition-checkbox">
+              Size:
+            </label>
+            <select name="size" [(ngModel)]="size">
+              <option *ngFor="let size of sizes" value="{{size}}" class="fill">{{size}}</option>
+            </select>
+          </div>
+
+          <div class="form-check mb-3">
+            <label class="form-check-label text-uppercase small  " for="condition-checkbox">
+              Color:
+            </label>
+            <select name="color" [(ngModel)]="color">
+              <option *ngFor="let color of colors" value="{{color}}" class="fill">{{color}}</option>
+            </select>
+          </div>
+        </section>
+        <hr>
+        <!-- Section: Condition -->
+
+        <!-- Section: Price -->
+        <section class="mb-4">
+          <h6 class="font-weight-bold mb-3">Fee</h6>
+
+          <div class="form-check mb-3">
+            <input class="range" type="range" min="0" max="2000" step="50" [(ngModel)]="price">
+            <p class="range" *ngIf="price>0">From<span class="value"> 0 </span> to <span class="value">${{price}}
+                </span></p>
+          </div>
+        </section>
+        <!-- Section: Price -->
+      </section>
+    <div class="collections" id="collections" (click)="extend();">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12"> <button type="button"(click)="openFilter()" class="btn btn1 btn-filter"><i class="fa fa-filter"></i> Filter</button>
+                </div>
+                <div class="col-lg-4 col-12"><h1 class="title"> SHOP ALL</h1></div>
+                <div class="col-lg-4 col-12">
+                    <label class="text-uppercase small text-muted sort">
+                        Sorting Type:
+                      <select  name="type" (change)="divsSort()" [(ngModel)]="sort">
+                        <option value="Featured Products" class="fill">Featured Products</option>
+                        <option value="Name Ascending" class="fill">Name Ascending</option>
+                        <option value="Name Descending" class="fill">Name Descending</option>
+                        <option value="Price Ascending" class="fill">Price Ascending</option>
+                        <option value="Price Descending" class="fill">Price Descending</option>
+                        <option value="New Arrival" class="fill">New Arraival</option>
+                        <option value="Best seller" class="fill">Best Seller</option>
+                      </select>                      </label>
+                </div>
+            </div>
+        </div>
+       
+        <div class="row justify-content-between" (click)="close()" >
+            <div class="col-sm-12 col-md-6 col-lg-4 text-center p-0 " *ngFor="let collect of allCollections;let i=index">
+                <div [class]=collect.name>
+                    <div class="image" >
+                        <img src="{{collect.img}}">
+                        <span class="note" *ngIf="collect.bestSeller">Best seller</span>
+                        <span class="note" *ngIf="collect.newArrival">new arrival</span>
+                        <button (click)="openQuickImgView();selectedProduct(i);" class="view">Quick View</button>
+                    </div>
+                     <a href="" class="col-title"> <span>I'm  </span> {{ collect.name}}</a>
+                     <div class="curancy" >
+                         <div id="edit-sec{{collect.id}}">
+                             <p class="price-old">{{collect.priceBefore| currency:'$':true:'2.2-4'}}</p>
+                             <p>{{collect.price |currency:'$':true:'1.2-4' }}</p>
+                            </div>
+                            </div>
+                            <h3 class="sizes">{{collect.sizes}}</h3>
+
+                         <!-- <div class="editor" id="editor{{collect.id}}">
+                            <input type="number"  id="{{collect.id}}"  value="{{collect.price}}">
+                         </div>
+                    </div> -->
+                    <!-- <div class="editor-btns" *ngIf="isAdmin[0].isAdmin">
+                        <button type="button" class="btn btn-primary"  (click)="edit(i)" >Edit</button>
+                        <button type="button" class="btn btn-primary" (click)="setValue(i)" >Set</button>
+                    </div> -->
+
+                        <button (click)="selectedProduct(i); openAddToCart();close()" class="btn1">Add To Cart</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+  </div>
+  <app-quick-view-add-cart [selectedProduct]="selectedProducts"></app-quick-view-add-cart>
+  <app-image-view [product]="selectedProducts"></app-image-view>

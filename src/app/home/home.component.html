@@ -1,0 +1,254 @@
+<div class="circles">
+    <div class="point animated-point-1"></div>
+    <div class="point animated-point-2"></div>
+    <div class="point animated-point-3"></div>
+    <div class="point animated-point-4"></div>
+    <div class="point animated-point-5"></div>
+    <div class="point animated-point-6"></div>
+    <div class="point animated-point-7"></div>
+    <div class="point animated-point-8"></div>
+    <div class="point animated-point-9"></div>
+</div>
+<div class="welcome">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-7 info">
+                <div class="yellow-box"></div>
+                <h1 class="title">Discover fashion,your style is your charm</h1>
+                <p class="sup-title">#1 Fashion & lifestyle destination in growth markets. <br> inspire and show yorself</p>
+                <a href="#" class="btn btn-0">Explore your style  </a>
+            </div>
+            <div class="col-sm-12 col-lg-5 image">
+                <img src="../../assets/images/head.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="about-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 about-image">
+                <img src="../../assets/images/model3.jpg">
+              <div class="red-box"></div>
+            </div>
+            <div class="col-lg-6 col-12 about-info">
+                <h2 class="title">Masri 4 less</h2>
+                <h2 class="sub-title">see it, style it</h2>
+                <a [routerLink]="['/about-us']" class="btn btn-0">about us  </a>
+            </div>
+            <div class="col-3 about-image">
+                <img class="model" src="../../assets/images/model.jpg">
+                <div class="yellow-box"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="quality">
+    <h1 class="title">excellence of quantity, best of best</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-6">
+                <img class="quality-img"  src="../../assets/images/model4.jpg">
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <ul>
+                    <li><div class="row">
+                        <div class="col-lg-1 col-12 icon">
+                            <img src="../../assets/images/dress.png" class="icon">
+                            
+                        </div>
+                        <div class="col-lg-11 col-12">
+
+                            <div class="quality-info">
+                                <h2 class="title">Designs by renowned and skilled designers</h2>
+                            <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ipsum error ea repudiandae nulla</p>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li><div class="row">
+                        <div class="col-lg-1 col-12 icon">
+                            <img src="../../assets/images/famous.png" class="icon">
+                            
+                        </div>
+                        <div class="col-lg-11 col-12">
+
+                            <div class="quality-info">
+                                <h2 class="title">Famous Brand</h2>
+                            <p class="text">complete your trenay style with a famous btands</p>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li><div class="row">
+                        <div class="col-lg-1 col-12 icon">
+                            <img src="../../assets/images/award.png" class="icon">
+                            
+                        </div>
+                        <div class="col-lg-11 col-12">
+
+                            <div class="quality-info">
+                                <h2 class="title">Good quality material</h2>
+                            <p class="text">all fashions styles are made from a high quality material and are memorable for you</p>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="shop-now">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 shop-info">
+                <h1 class="title">Good fashion topping your wishlist</h1>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6">
+                        <p class="text">We 've considered the most popular items in kits to make it easier to you to get everthing you need for your lifestyle</p>
+                        <div class="yellow-box"></div>         
+                    </div>
+                    <div class="col-sm-12 col-lg-6 shop-img">
+                        <img src="../../assets/images/model5.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-6 sec">
+                <img class="shop-img1" src="../../assets/images/model7.jpg">
+                    <h1 class="title1">The easiest wa<span>y to</span> get everthing</h1>
+                        <p class="text1">We 've considered the most popular items in kits to make it easier to you to get everthing you need for your lifestyle</p>
+                        <div class="red-box"></div>     
+                        <a class="btn btn-0" href="#">Shop now</a>    
+                    
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="special-offer" *ngIf="dayOffer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-4 head">
+                <h1 class="title">sale up to 75%</h1>
+                <h1 class="sub-title">Just for you in discount day</h1>
+                <a class="btn btn-0">See all </a>
+            </div>
+            <div class="col-sm-6 col-lg-4" *ngFor="let offer of dayOffer">
+                <div class="collect">
+                 <a href="">
+                     <img src="{{offer.img}}">
+                     <p class="discount">{{offer.discount}}%</p>
+                     <h1 class="name">{{offer.name}}</h1>
+                    </a>
+                    <h1 class="catagory">{{offer.catagory}}</h1>
+                    <h1 class="price"><span>{{offer.price }} EGP </span>{{offer.price - (offer.price * offer.discount/100)}} EGP </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="promo">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 photo">
+                <div class="bg-img"></div>
+                <img src="../../assets/images/model8.jpg">
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <div class="promo-text">
+                    <h1 class="title"><span>Get</span> 20% discount on your first <br><span>dea</span>l with promo code</h1>
+                    <p class="promo-code">FRST20</p>
+                </div>
+</div>
+        </div>
+    </div>
+</div>
+
+<div class="feature">
+    <h1 class="title">our recommended products that may fit your style</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-4" *ngFor="let offer of dayOffers">
+                <div class="collect">
+                 <a href="">
+
+                     <img src="{{offer.img}}">
+                     <h1 class="name">{{offer.name}}</h1>
+                    </a>
+                     <h1 class="catagory">{{offer.catagory}}</h1>
+                    <h1 class="price"><span>{{offer.price }} EGP </span>{{offer.price - (offer.price * offer.discount/100)}} EGP </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-0" href="">See All</a>
+
+</div>
+
+<div class="review">
+    <h1 class="title">Have a look to our customers reviews</h1>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-5 col-12 clint-img">
+                          <img class="carousel-img" src="../../assets/images/review (1).jpg">
+                          <div class="red-box"></div>
+                        </div>
+                        <div class="col-lg-7 col-12 clint-info">
+                            <h1>Keen Rubyjane</h1>
+                            <p>
+                                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, magni nulla aspernatur eaque asperiores adipisci minus alias Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, magni nulla aspernatur eaque asperiores adipisci minus alias."</p>
+                
+                        </div>
+                    </div>
+                </div>
+          </div>
+           <div class="carousel-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-12 clint-img">
+                        <img class="carousel-img" src="../../assets/images/review (2).jpg">
+                        <div class="yellow-box"></div>
+                      </div>
+                      <div class="col-lg-7 col-12 clint-info">
+                          <h1>Keen Rubyjane</h1>
+                          <p>
+                              "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, magni nulla aspernatur eaque asperiores adipisci minus alias Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, magni nulla aspernatur eaque asperiores adipisci minus alias."</p>
+              
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="carousel-item"> <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-12 clint-img">
+                    <img class="carousel-img" src="../../assets/images/review (3).jpg">
+                    <div class="red-box"></div>
+                  </div>
+                  <div class="col-lg-7 col-12 clint-info">
+                      <h1>Keen Rubyjane</h1>
+                      <p>
+                          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, magni nulla aspernatur eaque asperiores adipisci minus alias Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, magni nulla aspernatur eaque asperiores adipisci minus alias."</p>
+          
+                  </div>
+              </div>
+          </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</div>

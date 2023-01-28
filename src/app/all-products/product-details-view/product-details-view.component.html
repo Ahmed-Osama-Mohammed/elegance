@@ -1,0 +1,70 @@
+<div class="product-details pb-5">
+<h1 class="title">Product detail</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <img class="head-img" src="{{product.img}}">
+      <button class="all-images">
+        <img class="img-responsive" src="{{product.img}}" (click)="mainImage()">
+        <img *ngFor="let image of product.branchImages ;let i=index" class="img-responsive" src="{{image}}" (click)="changeImage(i)">
+         </button>
+        <!-- (click)="changeImage(i) -->
+    </div>
+    <div class="col-md-6 mb-4 mb-md-0 details">
+     <h2 class="name">{{product.name}}</h2>
+     <h2 class="type">Product type</h2>
+     <h2 class="id">SKU: 00{{product.id}}</h2>
+     <h2 class="availability">Availability: {{product.availability}} in stock</h2>
+     <h2 class="price">{{product.price| currency:'$':true:'2.2-4'}}</h2>
+     <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias.</p>
+     
+     <table class="table table-sm table-borderless mb-0">
+      <tbody>
+        <tr>
+          <th class="pl-0 w-25" scope="row"><strong>Model</strong></th>
+          <td>Shirt 5407X</td>
+        </tr>
+        <tr>
+          <th class="pl-0 w-25" scope="row"><strong>Color</strong></th>
+          <td>Blue</td>
+        </tr>
+        <tr>
+          <th class="pl-0 w-25" scope="row"><strong>Delivery</strong></th>
+          <td>Cairo, Egypt</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+     <label for="quantity" *ngIf="product.availability" >Quantity:
+      <input type="number" id="quantity" name="quantity" min="1" max="{{product.availability}}" value="1"
+          [(ngModel)]="quantity">
+  </label>
+  <label for="size" class="sizeA" *ngIf="product.availability">Size:
+      <select name="size" [(ngModel)]="size"  > 
+          <option *ngFor="let size of product.sizes" value="{{size}}" class="fill">{{size}}</option>
+         
+        </select>
+  </label>
+  <button class="btn1" [disabled]="!product.availability"><span class="icon icon-shopping_basket"></span> <span>ADD TO CART</span></button>
+    </div>
+  </div>
+</div>
+</div>
+<div class="related-products">
+  <h1 class="title">related Products</h1>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-lg-3" *ngFor="let product of relatedProducts;let i=index">
+            <div class="collect" *ngIf="i<4">
+             <a href="">
+
+                 <img src="{{product.img}}">
+                 <h1 class="name">{{product.name}}</h1>
+                </a>
+                 <h1 class="catagory">{{product.catagory}}</h1>
+                <h1 class="price">{{product.price }}  EGP </h1>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="bg-img">
+  <div class="img-magnifier-container col-lg-8 offset1 col-10">
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+    <div class="container height">
+      <div class="row height">
+        <div class="col-lg-7 col-12 p-0">
+          <img class="head-img" src="{{product.img}}" alt="Girl">
+
+        </div>
+        <div class="col-lg-5 col-12">
+          <h1 class="title">{{product.name}}</h1>
+          <h1 class="sub-title"><span>price:</span>{{product.price}}$</h1>
+          <p class="text"><span>Description:</span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed quis
+            iste nisi laudantium repellendus sunt .</p>
+          <div class="all-images">
+
+            <button class="btn-img"(click)="mainImage()"> <img class="img-responsive" src="{{product.img}}" alt="Girl">   </button>
+            <button class="btn-img" *ngFor="let image of product.branchImages ;let i=index" (click)="changeImage(i)">  <img class="img-responsive" src="{{image}}"*ngIf="i<2"> </button>
+          </div>
+          <button class="btn1" (click)="setProductToService()">Show Full Details</button>
+          <button class="btn1" (click)="addToCart()">Add To Cart</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

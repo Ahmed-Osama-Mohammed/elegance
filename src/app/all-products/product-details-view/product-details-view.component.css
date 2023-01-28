@@ -1,0 +1,127 @@
+h1.title{
+    text-align: center;
+    text-transform: capitalize;
+
+}
+.product-details {
+    background: #e0d3c3;
+    padding: 100px 50px;
+}
+img.head-img {
+    width: 100%;
+    border: 1px solid #989898;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rosybrown;
+}
+button.all-images {
+    border: none;
+    padding: unset;
+    display: flex;
+    background: none;
+    flex-wrap: wrap;
+}
+img.img-responsive:hover {
+    transform: scale(1.1);
+}
+img.img-responsive {
+    transition: all linear .3s;;  
+    width: 155px;
+    border: 1px solid #989898;
+    height: 170px;
+    margin: 15px 20px 0 7px;
+    border-radius: 10px;
+}
+
+.details {
+    padding-left: 40px;
+}
+.name {
+    font-size: 35px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+h2.type {
+    font-size: 20px;
+    font-weight: 400;
+    color: #525252;
+margin-top: 20px;
+}
+h2.id {
+    font-size: 15px;
+    margin: 25px 0 0px;
+}
+h2.availability {
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+h2.price {
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 26px;
+}
+p.text {
+    padding-bottom: 42px;
+}
+input#quantity,
+select {
+margin-top: 15px;
+    display: block;
+    width: 150px;
+}
+select {
+    word-wrap: normal;
+    height: 30px;
+}
+label {
+
+    margin-right: 90px;
+}
+hr {
+    margin: 2rem 0;
+}
+button.btn1:hover:enabled {
+    color: #6d6d6d;
+    background: #d0b0a6;
+  }
+  button.btn1 {
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    font-size: 15px;
+    margin-top: 50px;
+    color: white;
+    margin-right: 1%;
+    border: none;
+    transition: all .5s;
+    background: black;
+  }
+  .related-products h1.title {
+    text-align: center;
+    padding: 50px 30%;
+    font-size: 32px;
+}
+.related-products a.btn.btn-0 {
+    margin: 50px auto;
+    display: block;
+}
+.collect img {
+    width: 100%;
+}
+.collect h1.name {
+    text-align: center;
+    font-size: 24px;
+    margin: 6px 0px;
+}
+.collect a {
+    text-decoration: none;
+    color: #212529;
+}
+.collect h1.price {
+    text-align: center;
+    font-size: 21px;
+    color: #d8553a;
+    margin-bottom: 30px;
+}
+.related-products {
+    background: #e0d3c3;
+}
