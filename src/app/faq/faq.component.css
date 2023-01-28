@@ -50,7 +50,7 @@ button.accordion-button.collapsed {
   height: 1.25rem;
   margin-left: auto;
   content: "";
-  background-image: url(../../assets/Images/icon-down.png);
+  background-image: url(../../assets/images/icon-down.png);
   background-repeat: no-repeat;
   background-size: 1.25rem;
   transition: transform .2s ease-in-out;
